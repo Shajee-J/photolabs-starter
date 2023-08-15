@@ -1,13 +1,40 @@
 import React from 'react';
-
-import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
+import HomeRoute from 'routes/HomeRoute';
+import photos from 'mocks/photos';
+import topics from 'mocks/topics';
 
 // Note: Rendering a single component to build components in isolation
+
+
+// const photos = [<PhotoListItem
+//   key={sampleDataForPhotoListItem.id}
+//   username={sampleDataForPhotoListItem.username}
+//   location={sampleDataForPhotoListItem.location}
+//   imageSource={sampleDataForPhotoListItem.imageSource}
+//   profile={sampleDataForPhotoListItem.profile}
+// />, <PhotoListItem
+//   key={sampleDataForPhotoListItem.id}
+//   username={sampleDataForPhotoListItem.username}
+//   location={sampleDataForPhotoListItem.location}
+//   imageSource={sampleDataForPhotoListItem.imageSource}
+//   profile={sampleDataForPhotoListItem.profile}
+// />, <PhotoListItem
+//   key={sampleDataForPhotoListItem.id}
+//   username={sampleDataForPhotoListItem.username}
+//   location={sampleDataForPhotoListItem.location}
+//   imageSource={sampleDataForPhotoListItem.imageSource}
+//   profile={sampleDataForPhotoListItem.profile}
+// />]
+
+
+
 const App = () => {
   return (
     <div className="App">
-      <PhotoListItem/>
+      <div>
+     <HomeRoute />
+      </div>
     </div>
   );
 };
