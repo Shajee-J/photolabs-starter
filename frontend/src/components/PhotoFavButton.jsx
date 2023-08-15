@@ -11,8 +11,8 @@ const handleClick = (event) => {
 
   return (
     <div className="photo-list__fav-icon">
-      <div className="photo-list__fav-icon-svg">
-        <button onClick={handleClick}> <FavIcon  selected={fav} /> </button>
+      <div className="photo-list__fav-icon-svg" onClick={handleClick}>
+        <FavIcon selected={fav} />
       </div>
     </div>
   );
