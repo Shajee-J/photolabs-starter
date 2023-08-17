@@ -11,6 +11,7 @@ const PhotoList = (props) => {
       {props.photos.map((photoListItem) => {
         return (  
           <PhotoListItem key={photoListItem.id}
+           photo={photoListItem}
           id={photoListItem.id}
           username={photoListItem.user.username}
           location={photoListItem.location}
@@ -19,6 +20,7 @@ const PhotoList = (props) => {
           handleClick={() => props.handleClick(photoListItem.id)}
           favorites={props.favorites}
           toggleFav={props.toggleFav}
+          toggleModal={props.toggleModal}
           />);
         })}
     </ul>
