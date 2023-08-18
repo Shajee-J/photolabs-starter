@@ -18,9 +18,10 @@ const PhotoList = (props) => {
           imageSource={photoListItem.urls.full}
           profile={photoListItem.user.profile}
           handleClick={() => props.handleClick(photoListItem.id)}
-          favorites={props.favorites}
+          liked={props.favorites.includes(photoListItem.id)}
           toggleFav={props.toggleFav}
           toggleModal={props.toggleModal}
+          isFavPresent={props.isFavPresent}
           />);
         })}
     </ul>

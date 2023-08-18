@@ -8,16 +8,16 @@ import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
 
-  return (
+  return ( 
   <div className="photo-list__item">
-    <PhotoFavButton handleClick={props.handleClick} toggleFav={props.toggleFav} favorites={props.favorites} id={props.id}/>
-    <img className="photo-list__image" src={props.imageSource} alt="" onClick={props.toggleModal}/>
+    <PhotoFavButton handleClick={props.handleClick} toggleFav={props.toggleFav} liked={props.liked} id={props.id}  />
+    <img className="photo-list__image" src={props.imageSource} alt="" onClick={() => {props.toggleModal(props.id)}} />
    <div className="photo-list__user-details">
    <img className="photo-list__user-profile" src={props.profile} alt="" />
-   <body>
+   <main>
    <p className="photo-list__user-info">{props.username}</p>
    <p className="photo-list__user-info photo-list__user-location">{props.location.city}, {props.location.country}</p>
-   </body>
+   </main>
     </div> 
   </div>
   );

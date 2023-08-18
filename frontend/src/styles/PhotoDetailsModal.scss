@@ -14,7 +14,7 @@
 .photo-details-modal__close-button {
   background-color: white;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -27,11 +27,17 @@
 .photo-details-modal__images {
   margin-left: 36px;
   margin-top: 8px;
+  justify-items: center;
+
 }
 
 .photo-details-modal__image {
-  max-width: 95%;
+  width: 60em;
+  height: 35em;
+  margin-left: 3px;
   border-radius: 8px;
+  justify-self: center;
+  align-self: center;
 }
 
 .photo-details-modal__top-bar {
