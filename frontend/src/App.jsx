@@ -10,7 +10,7 @@ import useApplicationData from "hooks/useApplicationData";
 
 
 
-const App = () => {
+const App = () => { 
   // const [favorites, setFavorites] = useState([]);
 
   // // function to toggle, toggleState function, isFav function... =>  pass in as props

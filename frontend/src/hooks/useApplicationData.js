@@ -1,46 +1,58 @@
-import { useState } from "react";
+import React, { useReducer } from "react";
 import photos from 'mocks/photos';
 
-
-const useApplicationData = () => {
-
-const [favorites, setFavorites] = useState([]);
-
-// function to toggle, toggleState function, isFav function... =>  pass in as props
-const toggleFav = (id) => {
-
-  
-  if (favorites.includes(id)) {
-    const fav = [...favorites].filter(photoId => photoId != id);
-    setFavorites(fav)
-    return;
-  } else {
-    setFavorites(prev => [...prev, id]);
-  }
+const AppState = {
+  favorites: [],
+  photoModal: false,
+  photo: null,
 };
 
-const isFavPresent = favorites.length;
+const reducer = (state, action) => {
 
-  const [photoModal, setPhotoModal] = useState(false);
-  
-  const [photo, setPhoto] = useState();
-  const toggleModal = (id) => {
-    if (photoModal) {
-      setPhotoModal(false)
-    } else { setPhotoModal(true) }
-    const modelPhotoArr = photos.filter(photo => photo.id === id);
-    setPhoto(modelPhotoArr[0])
+
+  if (action.type === "TogglingFav") {
+      const { id } = action;
+      const updatedFavorites = state.favorites.includes(id) ? state.favorites.filter(photoId => photoId !== id) : [...state.favorites, id];
+      return {
+        ...state, favorites: updatedFavorites
+      };
   };
 
+  if (action.type === "TogglingModal") {
+      const { id } = action;
+      const newPhotoModal = !state.photoModal;
+      const modelPhotoArr = photos.filter(photo => photo.id === id);
+      const newPhoto = newPhotoModal ? modelPhotoArr[0] : null;
+      return {
+        ...state, photoModal: newPhotoModal, photo: newPhoto
+      };
+  };
 
-return {
+  return state;
+};
+
+const useApplicationData = () => {
+  const [state, dispatch] = useReducer(reducer, AppState);
+
+  const { favorites, photoModal, photo } = state;
+
+  const toggleFav = (id) => {
+    dispatch({ type: "TogglingFav", id });
+  };
+
+  const isFavPresent = favorites.length > 0;
+
+  const toggleModal = (id) => {
+    dispatch({ type: "TogglingModal", id });
+  };
+
+  return {
     favorites,
     toggleFav,
     isFavPresent,
     photo,
     toggleModal,
-    photoModal
-
+    photoModal,
   };
 };
 
