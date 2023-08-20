@@ -17,7 +17,6 @@ const PhotoList = (props) => {
           location={photoListItem.location}
           imageSource={photoListItem.urls.full}
           profile={photoListItem.user.profile}
-          handleClick={() => props.handleClick(photoListItem.id)}
           liked={props.favorites.includes(photoListItem.id)}
           toggleFav={props.toggleFav}
           toggleModal={props.toggleModal}

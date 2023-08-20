@@ -32,9 +32,9 @@
 }
 
 .photo-details-modal__image {
-  width: 60em;
+  width: 55em;
   height: 35em;
-  margin-left: 3px;
+  margin-left: 30px;
   border-radius: 8px;
   justify-self: center;
   align-self: center;
@@ -59,6 +59,11 @@
   font-weight: 500;
   color: #1e1e1e;
   margin-top: 24px;
+  margin-left: 30px;
   margin-bottom: 24px;
   width: 90%;
+}
+
+.photo-details-modal__grid {
+  margin-right: 30px;
 }

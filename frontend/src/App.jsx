@@ -2,7 +2,6 @@ import React from 'react';
 import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
-import photos from 'mocks/photos';
 import useApplicationData from "hooks/useApplicationData";
 
 // Note: Rendering a single component to build components in isolation
@@ -24,7 +23,7 @@ const App = () => {
   //   }
   // };
 
-  const {favorites, toggleFav, isFavPresent, photo, toggleModal, photoModal} = useApplicationData();
+  const {favorites, toggleFav, isFavPresent,  toggleModal, photoModal, photoData, selectedPhoto, topicData} = useApplicationData();
 
   
  
@@ -76,8 +75,8 @@ const App = () => {
   return (
     <div className="App">
       <div>
-        <HomeRoute photos={photos} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} toggleModal={toggleModal} />
-        {photoModal && <PhotoDetailsModal toggleModal={toggleModal} photo={photo} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} />}
+        <HomeRoute photos={photoData} topicData={topicData} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} toggleModal={toggleModal} />
+        {photoModal && <PhotoDetailsModal toggleModal={toggleModal} selectedPhoto={selectedPhoto} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} />}
       </div>
     </div>
   );
