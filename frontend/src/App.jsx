@@ -23,7 +23,7 @@ const App = () => {
   //   }
   // };
 
-  const {favorites, toggleFav, isFavPresent,  toggleModal, photoModal, photoData, selectedPhoto, topicData} = useApplicationData();
+  const {favorites, toggleFav, isFavPresent,  toggleModal, photoModal, photoData, selectedPhoto, topicData, changeTopic} = useApplicationData();
 
   
  
@@ -75,7 +75,7 @@ const App = () => {
   return (
     <div className="App">
       <div>
-        <HomeRoute photos={photoData} topicData={topicData} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} toggleModal={toggleModal} />
+        <HomeRoute changeTopic={changeTopic}  photos={photoData} topicData={topicData} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} toggleModal={toggleModal} />
         {photoModal && <PhotoDetailsModal toggleModal={toggleModal} selectedPhoto={selectedPhoto} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} />}
       </div>
     </div>
