@@ -8,15 +8,15 @@ describe("Interviewers", () => {
     app = generateApplication("test");
   });
 
-  afterEach(async () => {
+  afterEach(async() => {
     await request(app).post("/api/debug/reset");
   });
 
-  afterAll(async () => {
+  afterAll(async() => {
     await app.close();
   });
 
-  test("GET /api/interviewers", async () => {
+  test("GET /api/interviewers", async() => {
     await request(app)
       .get("/api/interviewers")
       .expect(200, {

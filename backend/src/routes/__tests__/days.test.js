@@ -8,15 +8,15 @@ describe("Days", () => {
     app = generateApplication("test");
   });
 
-  afterEach(async () => {
+  afterEach(async() => {
     await request(app).post("/api/debug/reset");
   });
 
-  afterAll(async () => {
+  afterAll(async() => {
     await app.close();
   });
 
-  test("GET /api/days", async () => {
+  test("GET /api/days", async() => {
     await request(app)
       .get("/api/days")
       .expect(200, [
