@@ -9,20 +9,20 @@ const PhotoList = (props) => {
   return (
     <ul className="photo-list">
       {props.photos.map((photoListItem) => {
-        return (  
+        return (
           <PhotoListItem key={photoListItem.id}
-           photo={photoListItem}
-          id={photoListItem.id}
-          username={photoListItem.user.username}
-          location={photoListItem.location}
-          imageSource={photoListItem.urls.full}
-          profile={photoListItem.user.profile}
-          liked={props.favorites.includes(photoListItem.id)}
-          toggleFav={props.toggleFav}
-          toggleModal={props.toggleModal}
-          isFavPresent={props.isFavPresent}
+            photo={photoListItem}
+            id={photoListItem.id}
+            username={photoListItem.user.username}
+            location={photoListItem.location}
+            imageSource={photoListItem.urls.full}
+            profile={photoListItem.user.profile}
+            liked={props.favorites.includes(photoListItem.id)}
+            toggleFav={props.toggleFav}
+            toggleModal={props.toggleModal}
+            isFavPresent={props.isFavPresent}
           />);
-        })}
+      })}
     </ul>
   );
 };

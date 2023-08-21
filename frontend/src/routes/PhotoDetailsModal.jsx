@@ -7,8 +7,8 @@ import '../styles/PhotoFavButton.scss'
 
 const PhotoDetailsModal = (props) => {
 
-  const {toggleModal, selectedPhoto, toggleFav, favorites, isFavPresent} = props
-  
+  const { toggleModal, selectedPhoto, toggleFav, favorites, isFavPresent } = props
+
   return (
     <div className="photo-details-modal__top-bar">
       <div className="photo-details-modal">
@@ -17,19 +17,19 @@ const PhotoDetailsModal = (props) => {
         </button>
         <div className="photo-details-modal__images" >
           <div className="photo-details-modal__fav-btn">
-          <PhotoFavButton toggleFav={toggleFav} liked={favorites.includes(selectedPhoto.id)} id={selectedPhoto.id} />
+            <PhotoFavButton toggleFav={toggleFav} liked={favorites.includes(selectedPhoto.id)} id={selectedPhoto.id} />
           </div>
-          <img className="photo-details-modal__image" src={selectedPhoto.urls.full} alt="" onClick={() => toggleModal(selectedPhoto.id) } />
+          <img className="photo-details-modal__image" src={selectedPhoto.urls.full} alt="" onClick={() => toggleModal(selectedPhoto.id)} />
           <main className='photo-details-modal__photographer-details'>
-          <img className="photo-list__user-profile" src={selectedPhoto.user.profile} alt="" />
-          <span>
-          <p className="photo-list__user-info">{selectedPhoto.user.username}</p>
-          <p className="photo-list__user-info photo-list__user-location">{selectedPhoto.location.city}, {selectedPhoto.location.country}</p>
-          </span>
+            <img className="photo-list__user-profile" src={selectedPhoto.user.profile} alt="" />
+            <span>
+              <p className="photo-list__user-info">{selectedPhoto.user.username}</p>
+              <p className="photo-list__user-info photo-list__user-location">{selectedPhoto.location.city}, {selectedPhoto.location.country}</p>
+            </span>
           </main>
           <header className="photo-details-modal__header">Similar Photos</header>
           <div className='photo-details-modal__grid'>
-          <PhotoList photos={Object.values(selectedPhoto.similar_photos)} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} />
+            <PhotoList photos={Object.values(selectedPhoto.similar_photos)} toggleFav={toggleFav} favorites={favorites} isFavPresent={isFavPresent} />
           </div>
         </div>
       </div>

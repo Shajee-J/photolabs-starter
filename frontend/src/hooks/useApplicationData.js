@@ -41,9 +41,9 @@ const reducer = (state, action) => {
 
   if (action.type === "TogglingTopic") {
     const { id } = action;
-   const choice = state.selectedTopic === id ? false : id
-      return {
-        ...state, selectedTopic: choice
+    const pickChecker = state.selectedTopic === id ? false : id
+    return {
+      ...state, selectedTopic: pickChecker
     };
 
   };
